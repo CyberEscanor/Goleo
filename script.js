@@ -2,7 +2,11 @@ const API_KEY = '14071ca267e247a49b88af698528b961'; // Votre clé API
 
 // Fonction pour récupérer et afficher les résultats de la Champions League
 function getFootballResults() {
-    fetch('https://api.football-data.org/v2/competitions/CL/matches', {
+    // Utilisation d'un proxy CORS pour contourner les restrictions
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const apiUrl = 'https://api.football-data.org/v2/competitions/CL/matches';
+    
+    fetch(proxyUrl + apiUrl, {
         headers: { 'X-Auth-Token': API_KEY }
     })
     .then(response => {
