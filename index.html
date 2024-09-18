@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goleo - Football Europe</title>
+    <title>Goleo - Actualités Football</title>
+    <!-- Lien vers le CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Bienvenue sur Goleo</h1>
-    <p>Votre source d'actualité sur les principaux championnats européens et le championnat saoudien.</p>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Goleo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Actualités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Résultats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Classements</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container mt-4">
+        <h1>Bienvenue sur Goleo</h1>
+        <p>Votre source d'actualités sur les principaux championnats européens et le championnat saoudien.</p>
+        
+        <!-- Section pour afficher les derniers résultats -->
+        <h2>Derniers résultats</h2>
+        <div id="results">
+            <!-- Les résultats seront affichés ici -->
+        </div>
+
+        <!-- Section pour afficher les articles générés par l'IA -->
+        <h2>Derniers articles</h2>
+        <div id="articles">
+            <!-- Les articles seront affichés ici -->
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
