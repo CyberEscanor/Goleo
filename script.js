@@ -1,7 +1,8 @@
 const API_KEY = '14071ca267e247a49b88af698528b961'; // Remplacez par votre clé API
 
+// Fonction pour récupérer et afficher les résultats de la Champions League
 function getFootballResults() {
-    fetch('https://api.football-data.org/v2/competitions/BL1/matches', {
+    fetch('https://api.football-data.org/v2/competitions/CL/matches', {
         headers: { 'X-Auth-Token': API_KEY }
     })
     .then(response => {
@@ -29,4 +30,5 @@ function getFootballResults() {
     });
 }
 
+// Appel de la fonction pour récupérer les résultats dès le chargement de la page
 getFootballResults();
