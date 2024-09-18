@@ -6,13 +6,43 @@
     <title>Goleo - Actualités Football</title>
     <!-- Lien vers le CSS de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ajouter un style personnalisé -->
+    <style>
+        body {
+            background-image: url('https://via.placeholder.com/1600x900'); /* Utilisez une vraie URL d'image */
+            background-size: cover;
+            color: white;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8); /* Rendre la barre de navigation transparente */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Ajouter un fond sombre translucide */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: #f1c40f; /* Couleur dorée pour les titres */
+        }
+        #results ul {
+            list-style: none;
+            padding: 0;
+        }
+        #results li {
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Goleo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,7 +67,7 @@
     <!-- Contenu principal -->
     <div class="container mt-4">
         <h1>Bienvenue sur Goleo</h1>
-        <p>Votre source d'actualités sur les principaux championnats européens et le championnat saoudien.</p>
+        <p>Suivez les dernières actualités du football européen et du championnat saoudien.</p>
         
         <!-- Section pour afficher les derniers résultats -->
         <h2>Derniers résultats</h2>
