@@ -1,13 +1,11 @@
-const API_KEY = '14071ca267e247a49b88af698528b961'; // Votre clé API
+const API_KEY = 'e3b568804d3c8610e98810301bc6381c'; // Remplacez par votre clé API API-Football
 
-// Fonction pour récupérer et afficher les résultats de la Champions League
+// Fonction pour récupérer et afficher les résultats de football
 function getFootballResults() {
-    // Utilisation d'un proxy CORS pour contourner les restrictions
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const apiUrl = 'https://api.football-data.org/v2/competitions/CL/matches';
-    
-    fetch(proxyUrl + apiUrl, {
-        headers: { 'X-Auth-Token': API_KEY }
+    fetch('https://v3.football.api-sports.io/fixtures?league=2&season=2023', {
+        headers: {
+            'x-apisports-key': API_KEY
+        }
     })
     .then(response => {
         if (!response.ok) {
@@ -16,13 +14,13 @@ function getFootballResults() {
         return response.json();
     })
     .then(data => {
-        const results = data.matches;
+        const results = data.response;
         let output = '<ul class="list-group">';
         results.forEach(match => {
             output += `
             <li class="list-group-item">
-                <h5>${match.homeTeam.name} ${match.score.fullTime.homeTeam} - ${match.score.fullTime.awayTeam} ${match.awayTeam.name}</h5>
-                <p>Date : ${new Date(match.utcDate).toLocaleString()}</p>
+                <h5>${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</h5>
+                <p>Date : ${new Date(match.fixture.date).toLocaleString()}</p>
             </li>`;
         });
         output += '</ul>';
