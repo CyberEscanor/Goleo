@@ -1,11 +1,15 @@
 const API_KEY = '14071ca267e247a49b88af698528b961'; // Remplacez par votre clé API
 
-// Fonction pour récupérer et afficher les résultats des matchs
 function getFootballResults() {
-    fetch('https://api.football-data.org/v2/competitions/PL/matches', {
+    fetch('https://api.football-data.org/v2/competitions/BL1/matches', {
         headers: { 'X-Auth-Token': API_KEY }
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erreur API : ${response.status} ${response.statusText}`);
+        }
+        return response.json();
+    })
     .then(data => {
         const results = data.matches;
         let output = '<ul class="list-group">';
@@ -19,8 +23,10 @@ function getFootballResults() {
         output += '</ul>';
         document.getElementById('results').innerHTML = output;
     })
-    .catch(error => console.error('Erreur:', error));
+    .catch(error => {
+        console.error('Erreur:', error);
+        document.getElementById('results').innerHTML = `<p style="color:red;">Erreur lors du chargement des résultats : ${error.message}</p>`;
+    });
 }
 
-// Appel de la fonction pour récupérer les résultats dès le chargement de la page
 getFootballResults();
