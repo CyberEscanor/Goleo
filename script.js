@@ -1,4 +1,4 @@
-const API_KEY = 'e3b568804d3c8610e98810301bc6381c'; // Remplacez par votre clé API API-Football
+const API_KEY = '14071ca267e247a49b88af698528b961'; // Remplacez par votre clé API API-Football
 
 // Fonction pour récupérer et afficher les résultats de football
 function getFootballResults() {
